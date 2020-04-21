@@ -1,0 +1,18 @@
+.box{
+  width:100px;
+  height:100px;
+  background:red;
+  display:block;
+  float:left;
+}
+
+.nbox{
+  margin:10px;
+  width:100px;
+  height:100px;
+  background:red;
+  display:none;
+}
+#trgt:target ~ .nbox{
+  display:block;
+}

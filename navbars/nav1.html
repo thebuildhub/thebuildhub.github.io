@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="nav1.css">
+
+</head>
+<body>
+<header>
+  <div class="logo">
+    <p>NameX</p>
+    <div class="mn-cont" onclick="openfunc()"><div class="menubar" id="chg-state" ></div></div>
+  </div>
+  <div class="menu" id="clkmenu">
+    <a href="" class="home">Home</a>
+    <a href="" class="home">Services</a>
+    <a href="" class="home">Pricing</a>
+    <a href="" class="home">About Us</a>
+    <a href="" class="home">Contact Us</a>
+  </div>
+</header>
+
+<script>
+function openfunc(){
+ var x = document.getElementById("clkmenu");
+ x.classList.toggle("change");
+ var y = document.getElementById("chg-state");
+ y.classList.toggle("chng-mnbr");
+}
+</script>
+</body>
+</html>

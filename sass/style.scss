@@ -1,0 +1,35 @@
+
+$prim-color:rgb(48, 133, 119);
+$font-size: (
+    "small":1rem,
+    "med":2rem,
+    "large":3rem,
+);
+
+@function size($size-name){
+    @return map-get($font-size,$size-name);
+}
+
+body{
+    background:$prim-color;
+}
+header{
+    width:80vw;
+    margin:0 auto;
+
+    .navbar{
+        color:blue;
+        font-size:size(med);
+     
+    }
+    
+    p{
+        color:rgb(70, 59, 59);
+    }
+
+    .para2{
+        font-size:size(large);
+    }
+
+
+}

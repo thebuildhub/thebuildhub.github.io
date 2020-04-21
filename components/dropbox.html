@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropbox</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            text-decoration:none;
+            list-style:none;
+            font-size:20px;
+            color:black;
+        }
+        header nav{
+            display:flex;
+            justify-content:space-around;
+            align-items:center;
+            padding:20px;
+        }
+        .dropdown{
+            position:relative;
+        }
+        .dropdown button{
+            border:none;
+        }
+        .dropbox{
+            position:absolute;
+            background:#63cfbd;
+            width:200px;
+            height:0;
+            margin-top:20px;
+            top:50%;
+            left:0;
+            transform:translateX(-25%);
+            opacity:0;
+            overflow:hidden;
+            transition:opacity 150ms ease-in-out,top 150ms ease-in-out, height 250ms ease-in-out ;
+
+        }
+        .dropbox li{
+            padding:10px;
+            padding-left:20px;
+
+        }
+        .dropbox li:hover{
+            background:#38a08f;
+        }
+        .dropbox li a{
+            font-size: 15px;
+        }
+        .dropdown button:focus + .dropbox{
+            opacity:1;
+            top:100%;
+            height:200px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <li><a href="#">Home</a></li>
+
+            <li>
+                <div class="dropdown">
+                    <button>Projects</button>
+                    <ul class="dropbox">
+                        <li><a href="">Weather app</a></li>
+                        <li><a href="">New api handling</a></li>
+                        <li><a href="">Color Designer</a></li>
+                        <li><a href="">Look Painter</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li>
+                <div class="dropdown">
+                    <button>Products</button>
+                    <ul class="dropbox">
+                        <li><a href="">Cool Components</a></li>
+                        <li><a href="">Design Tools</a></li>
+                        <li><a href="">Chrome dev Tools</a></li>
+                        <li><a href="">Look out for it</a></li>
+                    </ul>
+                </div>
+            </li>
+        </nav>
+    </header>
+</body>
+</html>

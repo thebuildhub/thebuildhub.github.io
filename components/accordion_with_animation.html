@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion with animation</title>
+    <style>
+        body{
+            margin:10px;
+        }
+        h1{
+            margin:10px;
+            color:#43439c;
+        }
+        
+        .accordion{
+            border:2px solid #43439c;
+            margin:10px;
+        }
+        .accordion_btn {
+            width:100%;
+            border:none;
+            background:#43439c;
+            padding:10px;
+            text-align:left;
+            font-size:1.2rem;
+            font-weight:bold;
+            color:#eee;
+        }
+        .accordion_btn::after{
+            content:'\25be';
+            float:right;
+            transform:scale(1.5);
+            transition:transform 150ms linear;
+
+        }
+        .accordion_content{
+            padding:0 10px;
+            max-height:0;
+            overflow: hidden;
+            transition: max-height 150ms linear;
+        }
+        .accordion_btn-active{
+            background:#6868ca;
+        }
+        .accordion_btn-active::after{
+            transform:rotate(180deg) scale(1.5) translateY(-20%);
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Accordion with animation</h1>
+    <div class="accordion">
+        <button class="accordion_btn">Expand here</button>
+        <div class="accordion_content">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi impedit, eaque perferendis doloribus labore sapiente quasi nisi, quidem, explicabo nam deserunt? Similique aspernatur quos ratione!</p>
+        </div>
+    </div>
+    <div class="accordion">
+        <button class="accordion_btn">Expand here</button>
+        <div class="accordion_content">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi impedit, eaque perferendis doloribus labore sapiente quasi nisi, quidem, explicabo nam deserunt? Similique aspernatur quos ratione!</p>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.accordion_btn').forEach(button => button.addEventListener('click', e => {
+            const accordionContent = button.nextElementSibling;
+            button.classList.toggle('accordion_btn-active');
+
+            if(button.classList.contains('accordion_btn-active')){
+                accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+            }
+            else{
+                accordionContent.style.maxHeight = 0;
+            }
+        }))
+    </script>
+</body>
+</html>

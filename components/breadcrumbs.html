@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breadcrumbs</title>
+    <style>
+        .breadcrumbs{
+            padding:10px;
+            font-family:sans-serif;
+            list-style:none;
+        }
+        .breadcrumbs_item{
+            display: inline-block;
+        }
+        .breadcrumbs_item:not(:last-of-type)::after{
+            content:'/';
+            padding:0 5px;
+            color:#ccc;
+        }
+        .breadcrumbs_link{
+            text-decoration:none;
+            color:#999;
+        }
+        .breadcrumbs_link:hover{
+            text-decoration:underline;
+        }
+        .breadcrumbs_link-active{
+            color:#009578;
+            font-weight:bolder;
+        }
+        /* for second type of arrow */
+        .breadcrumbs_item2{
+            display:inline-block;
+        }
+        .breadcrumbs_item2:not(:last-of-type)::after{
+            content:'\203a';
+            padding:0 5px;
+            color:#ccc;
+        }
+
+
+    </style>
+</head>
+<body>
+    <ul class="breadcrumbs">
+        <li class="breadcrumbs_item"><a href="" class="breadcrumbs_link">Home</a></li>
+        <li class="breadcrumbs_item"><a href="" class="breadcrumbs_link">Media</a></li>
+        <li class="breadcrumbs_item"><a href="" class="breadcrumbs_link">Photos</a></li>
+        <li class="breadcrumbs_item"><a href="" class="breadcrumbs_link breadcrumbs_link-active">Nature(2020)</a></li> 
+    </ul>
+    <ul class="breadcrumbs">
+        <li class="breadcrumbs_item2"><a href="" class="breadcrumbs_link">Home</a></li>
+        <li class="breadcrumbs_item2"><a href="" class="breadcrumbs_link">Media</a></li>
+        <li class="breadcrumbs_item2"><a href="" class="breadcrumbs_link">Photos</a></li>
+        <li class="breadcrumbs_item2"><a href="" class="breadcrumbs_link breadcrumbs_link-active">Nature(2020)</a></li> 
+    </ul>
+</body>
+</html>

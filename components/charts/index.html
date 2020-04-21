@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charts using charts.js</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+</head>
+<body>
+    <!-- hello world -->
+
+    <h1>Using the chart from chart.js</h1>
+
+    <canvas id = "firstChart"></canvas>
+    
+    <script>
+     let popCanvas = document.querySelector('#firstChart').getContext('2d');
+
+     let popChart = new Chart( popCanvas,{
+         type: 'bar',
+         data : {
+             labels : ['Boston', 'Rosenwend', 'New York', 'Rick City'],
+             datasets :[{
+                label : 'Population',
+                data : [
+                    800,
+                    500,
+                    400,
+                    700
+                ],
+                backgroundColor : 'lightblue'
+             }]
+         },
+         options : {}
+     })
+    </script>
+</body>
+</html>

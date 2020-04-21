@@ -1,0 +1,279 @@
+.container1{
+  width:100vw;
+  height: 100px;
+  /* display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center; */
+}
+.b1{
+  background : red;
+  width: 100px;
+  height:100px;
+  text-align:center;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  margin : 0 auto;
+  border-radius : 20%;
+  animation: shake 1s linear infinite;
+}
+@keyframes shake{
+  25%{
+    transform : translateX(-20px);
+  }
+  75%{
+    transform : translateX(20px);
+  }
+}
+.container2{
+  width: 80vw;
+  height: 70vh;
+  margin: 10px auto;
+  border: 2px solid red;
+  position : relative;
+}
+
+.b2{
+  width: 100px;
+  height:100px;
+  background:red;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 50px);
+  left : calc(50% - 50px);
+  /* transform : translate(calc(50% - 50px),calc(50% - 50px)); */
+  animation: bounceX 3s linear infinite;
+}
+.b3{
+  width: 100px;
+  height:100px;
+  background:red;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 50px);
+  left : calc(50% - 50px);
+  /* transform : translate(calc(50% - 50px),calc(50% - 50px)); */
+  animation: bounceY 3s linear infinite;
+}
+.b4{
+  width: 100px;
+  height:100px;
+  background:red;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 50px);
+  left : calc(50% - 50px);
+
+  animation: bounce-X 3s linear infinite;
+}
+.b5{
+  width: 100px;
+  height:100px;
+  background:red;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 50px);
+  left : calc(50% - 50px);
+  animation: bounce-Y 3s linear infinite;
+}
+
+@keyframes bounceX {
+  25%{
+    transform: translateX(-110%);
+  }
+  50%{
+    transform: translateX(0%);
+  }
+  75%{
+    transform: translateX(110%);
+  }
+  100%{
+    transform: translateX(0%);
+  }
+}
+
+@keyframes bounceY {
+    25%{
+      transform: translateY(-190%);
+    }
+    50%{
+      transform: translateY(0%);
+    }
+    75%{
+      transform: translateY(190%);
+    }
+    100%{
+      transform: translateY(0%);
+    }
+}
+@keyframes bounce-X {
+  25%{
+    transform: translateX(110%);
+  }
+  50%{
+    transform: translateX(0%);
+  }
+  75%{
+    transform: translateX(-110%);
+  }
+  100%{
+    transform: translateX(0%);
+  }
+}
+@keyframes bounce-Y {
+    25%{
+      transform: translateY(190%);
+    }
+    50%{
+      transform: translateY(0%);
+    }
+    75%{
+      transform: translateY(-190%);
+    }
+    100%{
+      transform: translateY(0%);
+    }
+}
+.heart{
+  margin:80px auto;
+  margin-bottom:0px;
+  width:100px;
+  height:100px;
+  background: red;
+  transform : rotate(45deg);
+  position: relative;
+  animation : beating 3s ease-in-out infinite;
+}
+.heart::before{
+  content:'';
+  width:100px;
+  background: red;
+  height:100px;
+  border-radius : 50%;
+  display:block;
+  position:absolute;
+  top:-50%;
+}
+
+.heart::after{
+  content:'';
+  width:100px;
+  height:100px;
+  background: red;
+  border-radius:50%;
+  display:block;
+  position:absolute;
+  left:-50%;
+  }
+@keyframes beating{
+  50%{
+    transform: scale(0.5) rotate(45deg);
+  }
+}
+@keyframes beat-nm{
+  50%{
+    transform: scale(0.5);
+  }
+}
+
+.name{
+  width:100px;
+  height:20px;
+  font-size:20px;
+  margin: -80px auto;
+  text-align:center;
+  text-transform: uppercase;
+  animation: beat-nm 3s linear infinite;
+  /* border: 2px solid red; */
+}
+/* animation here */
+.animation{
+  width:100vw;
+  height:80vh;
+  border: 2px solid black;
+  display:relative;
+}
+.gift{
+  border: 2px solid red;
+  height:220px;
+  width:200px;
+  position: relative;
+  left:calc(50vw - 100px)
+  /* animation : box-animation 3s ease-in-out 1;
+  animation-fill-mode: forward; */
+}
+.gift:hover{
+  transition:all 2s linear;
+  transform:translateY(calc(80vh - 212px));
+}
+.rope{
+  width: 3px;
+  height: 100px;
+  background:blue;
+  position: absolute;
+  left:80px;
+}
+.lead{
+  width:120px;
+  height: 20px;
+  background:blue;
+  position: absolute;
+  top:100px;
+  left:30px;
+}
+.cont{
+  width:110px;
+  height: 90px;
+  background:blue;
+  position: absolute;
+  top:120px;
+  left:35px;
+}
+.heart1{
+  margin:80px auto;
+  width:100px;
+  height:100px;
+  background: red;
+  transform : rotate(45deg);
+  position: relative;
+  animation : beating 3s ease-in-out infinite;
+  visibility : hidden;
+}
+.heart1::before{
+  content:'';
+  width:100px;
+  background: red;
+  height:100px;
+  border-radius : 50%;
+  display:block;
+  position:absolute;
+  visibility:hidden;
+  top:-50%;
+}
+
+.heart1::after{
+  content:'';
+  width:100px;
+  height:100px;
+  background: red;
+  border-radius:50%;
+  display:block;
+  position:absolute;
+  left:-50%;
+  visibility:hidden;
+  }
+
+@keyframes beating{
+  50%{
+    transform: scale(0.5) rotate(45deg);
+  }
+}
+/* @keyframes box-animation{
+  100%{
+    transform:translateX(calc(50vw - 100px));
+  }
+  /* 100%{
+    transform:translateY(calc(40vh - 110px));
+  } */
+} */

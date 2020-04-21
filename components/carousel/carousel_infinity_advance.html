@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel infinite scroll</title>
+    <style>
+        .carousel{
+            width:400px;
+            height:300px;
+            margin: 20px auto;
+            position:relative;
+            overflow:hidden;
+        }
+        .carousel_slides{
+            width:100%;
+            height:100%;
+            display:flex;
+
+        }
+        .carousel_slides img{
+            width:100%;
+            height:100%;
+        }
+        .carousel button{
+            position:absolute;
+            top:50%;
+            transform : translateY(-50%);
+            border:none;
+            color:#ddd;
+            background:transparent;
+        }
+        .carousel button::after{
+            content:'\2039';
+            font-size:40px;
+        }
+        .carousel_btn-next{right:0;}
+        .carousel .carousel_btn-next::after{
+            content:'\203a';
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <div class="carousel_slides">
+            <img src="/components/img/img-nature4.jpg" alt="" id = "last-node">
+
+            <img src="/components/img/img-nature1.jpg" alt="">
+            <img src="/components/img/img-nature2.jpg" alt="">
+            <img src="/components/img/img-nature3.jpg" alt="">
+            <img src="/components/img/img-nature4.jpg" alt="">
+
+            <img src="/components/img/img-nature1.jpg" alt="" id = "first-node">
+
+        </div>
+
+        <button class="carousel_btn-prev"></button><button class="carousel_btn-next"></button>
+    </div>
+
+    <script>
+        const carouselSlide = document.querySelector('.carousel_slides');
+        const carouselImages = document.querySelectorAll('.carousel_slides img');
+
+        const prevBtn = document.querySelector('.carousel_btn-prev');
+        const nextBtn = document.querySelector('.carousel_btn-next');
+
+        let counter =1;
+        const size = carouselSlide.clientWidth;
+
+        carouselSlide.style.transform = 'translateX(' + (-size*counter) + 'px)';
+
+        //button event
+        nextBtn.addEventListener('click',() =>{
+          if(counter >= carouselImages.length -1 ) return;
+            carouselSlide.style.transition = 'transform 250ms ease-in-out';          
+            counter++;
+            carouselSlide.style.transform = 'translateX(' + (-size*counter) + 'px)';
+        });
+
+        prevBtn.addEventListener('click',() =>{
+            if(counter <= 0)return;
+            carouselSlide.style.transition = 'transform 250ms ease-in-out';          
+
+            counter--;
+            carouselSlide.style.transform = 'translateX(' + (-size*counter) + 'px)';
+        });
+
+        carouselSlide.addEventListener('transitionend', () =>{
+            console.log('fired');
+            if(carouselImages[counter].id === 'last-node'){
+                carouselSlide.style.transition = 'none';
+                counter = carouselImages.length -2;
+                carouselSlide.style.transform = 'translateX(' +(-size*counter) + 'px)';
+            }
+            if(carouselImages[counter].id === 'first-node'){
+                carouselSlide.style.transition = 'none';
+                counter = carouselImages.length - counter;
+                carouselSlide.style.transform = 'translateX(' + (-size*counter) + 'px)';
+            }
+        })
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+    <style>
+        .carousel{
+            width:400px;
+            height:300px;
+            overflow:hidden;
+            border:2px solid red;
+            margin:20px;
+            position:relative;
+
+
+        }
+        .carousel_slide{
+            display:flex;
+            width:100%;
+            height:100%;
+            margin:auto;
+        }
+        .carousel_slide img{
+            width:100%;
+            height:100%;
+        }
+
+        .carousel button{
+            border:none;
+            position:absolute;
+            top:50%;
+            transform:translateY(-50%);
+            z-index:10;
+            color:#ddd;
+            background:transparent;
+        }
+        .carousel_btn-prev{
+            left:0;
+            
+        }
+        .carousel_btn-next::after,
+        .carousel_btn-prev::after{
+            content:'\203a';
+            font-size:40px;
+            transform:scale(1.5);
+
+        }
+        .carousel_btn-prev::after{
+            content : '\2039';
+        }
+        .carousel_btn-next{
+            right:0;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <button class="carousel_btn-prev"></button>
+       
+        
+        <div class="carousel_slide">
+            <img src="/components/img/img-nature1.jpg" alt="">
+            <img src="/components/img/img-nature2.jpg" alt=""> 
+            <img src="/components/img/img-nature3.jpg" alt=""> 
+            <img src="/components/img/img-nature4.jpg" alt="">
+        </div>
+        <button class="carousel_btn-next"></button>
+       
+    </div>
+  
+
+    <script>
+        const carouselSlide = document.querySelector('.carousel_slide');
+        const carouselImages = document.querySelectorAll('.carousel_slide img');
+
+        const prevBtn = document.querySelector('.carousel_btn-prev');
+        const nextBtn = document.querySelector('.carousel_btn-next');
+
+        let counter = 0;
+        const size = carouselSlide.clientWidth;
+        carouselSlide.style.transition = 'transform 250ms ease-in-out';
+        //button listener
+        nextBtn.addEventListener('click', () =>{
+            if(counter === carouselImages.length -1){
+                counter = -1;
+                
+            }
+            counter++;
+            carouselSlide.style.transform = 'translateX(' + (-size*counter) + 'px)';
+        })
+
+        prevBtn.addEventListener('click',() =>{
+            if(counter === 0){
+                counter = carouselImages.length;
+            }
+            counter--;
+            carouselSlide.style.transform = 'translateX(' + (-size*counter) + 'px)';
+        })
+    </script>
+</body>
+</html>

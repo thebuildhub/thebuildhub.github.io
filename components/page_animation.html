@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Animation</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+
+        .slider{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100vh;
+            background:linear-gradient(to left , #ba7453,#d1a984);
+            z-index:-1;
+        }
+
+        nav{
+            display:grid;
+            grid-template-columns:10% 1fr 1fr 10%;
+            min-height:10vh;
+            color:white;
+            align-items:center;
+        }
+        .logo{
+            grid-column:2/3;
+            /* font-size:24px; */
+        }
+        .hamburger{
+            width:20px;
+            height:5px;
+            background:white;  
+            position:relative;  
+            justify-self:end;        
+        }
+        .hamburger::before,
+        .hamburger::after{
+            content:'';
+            width:30px;
+            height:5px;
+            background:white;
+            position:absolute;
+            top:-10px;
+            left:0;
+        }
+        .hamburger::after{
+            top:10px;
+            width:10px;
+        }
+
+        section{
+            display:flex;
+            height:80vh;
+            justify-content:center;
+            align-items:center;
+        }
+        .hero{
+            height:60%;
+            width:100%;
+            position:relative;
+        }
+        .hero img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+        .headline{
+            position:absolute;
+            top:70%;
+            left :10%;
+            font-size:30px;
+            color:white;
+            z-index:3;
+        }
+        .hero::after{
+            content:'';
+            background:black;
+            width:100%;
+            height:100%;
+            position:absolute;
+            top:0;
+            left:0;
+            opacity:0.3;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <h3 class="logo">Dream Vacation</h3>
+            <div class="hamburger"></div>
+        </nav>
+        <section>
+            <div class="hero">
+                <img src="/components/img/img-nature1.jpg" alt="">
+                <h1 class="headline">Dream Big</h1>
+            </div>
+        </section>
+    </header>
+    <div class="slider"></div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
+
+    <script>
+        const hero = document.querySelector('.hero');
+        const slider = document.querySelector('.slider');
+        const logo = document.querySelector('.logo');
+        const hamburger= document.querySelector('.hamburger');
+        const headline = document.querySelector('.headline');
+
+        const t1 = new TimelineMax();
+
+        t1.fromTo(
+            hero,
+            1,
+            {height : "0%"},
+            {height : "80%",ease : Power2.easeInOut}
+        ).fromTo(
+            hero,
+            1.2,
+            {width : "100%"},
+            {width : "80%", ease : Power2.easeInOut}
+        ).fromTo(
+            slider,
+            1.2,
+            {x : "-100%"},
+            {x : "0%", ease : Power2.easeInOut},
+            "-=1.2"
+        ).fromTo(
+            logo,
+            0.5,
+            {opacity : 0 , x:30},
+            {opacity : 1 , x : 0},
+            "-=0.5"
+        ).fromTo(
+            hamburger,
+            0.5,
+            {opacity:0,x:30},
+            {opacity:1, x:0},
+            "-=0.5"
+        );
+    </script>
+
+</body>
+</html>

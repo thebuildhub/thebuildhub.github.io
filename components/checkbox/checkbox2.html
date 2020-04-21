@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox</title>
+    <style>
+        body{
+            background:#ddd;
+            color:#121212;
+            transition:background 150ms linear, color 150ms linear;
+            font-family:sans-serif;
+        }
+        .checkbox{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            cursor:pointer;
+        }
+        .checkbox input{
+            visibility:hidden;
+        }
+        .custom_checkbox{
+            width:50px;
+            height:20px;
+            border:2px solid #34967d;
+            border-radius:20px;
+            margin:10px;
+            position:relative;
+            transition:background 150ms linear;
+        }
+        .custom_checkbox::after{
+            content:'';
+            width:30px;
+            height:30px;
+            background: #16614e;
+            position:absolute;
+            top:-5px;
+            left:-2px;
+            border-radius:50%;
+            transition:left 150ms linear;
+        }
+        .checkbox input:checked + .custom_checkbox{
+            background: #34967d;
+            
+        }
+        .checkbox input:checked + .custom_checkbox::after{
+            background:#16614e;
+            left:calc(100% - 28px + 2px);
+        }
+    </style>
+</head>
+<body>
+    <label for="chkbx-inpt" class = "checkbox">
+        <input  type="checkbox" id="chkbx-inpt">
+        <div class="custom_checkbox"></div>
+        Dark mode
+    </label>
+    <script>
+        const checkbox = document.querySelector('.checkbox input');
+        console.log(checkbox);
+        const body = document.querySelector('body');
+        checking();
+        checkbox.addEventListener('change', checking);
+
+        function checking(){
+            if(checkbox.checked){
+            body.style.background = '#121212';
+            body.style.color = '#ddd';
+            console.log('checked');
+        }
+        else{
+            body.style.background = '#ddd';
+            body.style.color = '#121212';
+            console.log('unchecked');
+        }
+        }
+       
+    </script>
+</body>
+</html>

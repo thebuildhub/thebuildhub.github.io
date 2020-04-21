@@ -1,0 +1,20 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+}
+section{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100vw;
+  height:100vh;
+  background:#eee;
+}
+section .box{
+  width:250px;
+  height:300px;
+  box-shadow:
+      -12px -12px 12px 0 rgba(255,255,255,1),
+      12px 12px 12px 0 rgba(0,0,0 ,0.03)
+}

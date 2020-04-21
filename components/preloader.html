@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preloader</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            text-decoration:none;
+            list-style:none;
+            font-size:20px;
+            color:black;
+            font-family:sans-serif;
+        }
+        .preloader{
+            position:fixed;
+            height:100%;
+            width:100%;
+            background:white;
+            z-index:3;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            opacity:1;
+            transition:opacity 550ms ease-out;
+        }
+        .preloader div{
+            background:black;
+            width:20px;
+            height:20px;
+            margin:10px;
+            border-radius:50%;
+          
+        }
+        .box1{
+            animation: loading 1s infinite alternate;
+        }
+        .box2{
+            animation: loading 1s infinite alternate 75ms;
+        }
+        .box3{
+            animation: loading 1s infinite alternate 150ms;
+        }
+        
+
+        @keyframes loading{
+            from{
+                transform:translateY(0);
+            }
+            to{
+                transform:translateY(-80px);
+
+            }
+        }
+        body{
+            background:#95e0d4;
+        }
+        header nav{
+            display:flex;
+            justify-content:space-around;
+            align-items:center;
+            padding:20px;
+        }
+        .dropdown{
+            position:relative;
+
+        }
+        .dropdown button{
+            border:none;
+            background:inherit;
+        }
+        .dropbox{
+            position:absolute;
+            background:#57c0af;
+            width:200px;
+            height:0;
+            margin-top:20px;
+            top:50%;
+            left:0;
+            transform:translateX(-25%);
+            opacity:0;
+            overflow:hidden;
+            transition:opacity 150ms ease-in-out,top 150ms ease-in-out, height 250ms ease-in-out ;
+            z-index : 5;
+
+        }
+        .dropbox li{
+            padding:10px;
+            padding-left:20px;
+
+        }
+        .dropbox li:hover{
+            background:#38a08f;
+        }
+        .dropbox li a{
+            font-size: 15px;
+        }
+        .dropdown button:focus + .dropbox{
+            opacity:1;
+            top:100%;
+            height:200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="preloader">
+       <div class="box1"></div>
+       <div class="box2"></div>
+       <div class="box3"></div>
+
+    </div>
+    <header>
+        <nav>
+            <li><a href="#">Home</a></li>
+
+            <li>
+                <div class="dropdown">
+                    <button>Projects</button>
+                    <ul class="dropbox">
+                        <li><a href="">Weather app</a></li>
+                        <li><a href="">New api handling</a></li>
+                        <li><a href="">Color Designer</a></li>
+                        <li><a href="">Look Painter</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li>
+                <div class="dropdown">
+                    <button>Products</button>
+                    <ul class="dropbox">
+                        <li><a href="">Cool Components</a></li>
+                        <li><a href="">Design Tools</a></li>
+                        <li><a href="">Chrome dev Tools</a></li>
+                        <li><a href="">Look out for it</a></li>
+                    </ul>
+                </div>
+            </li>
+        </nav>
+    </header>
+    <section>
+        <img src="/components/img/img-nature1.jpg" alt="">
+    </section>
+<script>
+    window.addEventListener('load',()=>{
+        const preloader = document.querySelector('.preloader');
+        preloader.style.opacity = '0';
+        preloader.style.pointerEvents = "none";
+    })
+</script>
+</body>
+</html>

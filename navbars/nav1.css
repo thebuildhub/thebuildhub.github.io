@@ -1,0 +1,107 @@
+/* imports */
+/* google fonts */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500|Roboto|Trade+Winds&display=swap');
+/* general style */
+*{
+  margin:0;
+  padding:0;
+  text-decoration:none;
+  color:grey;
+  list-style-type:none;
+}
+/* header */
+header{
+  display:flex;
+  width:100vw;
+  height:40px;
+  justify-content:flex-end;
+  align-items:center;
+  background:#242524;
+}
+.logo{
+  margin-right:auto;
+  margin-left:10px;
+}
+.logo p{
+  font-size:30px;
+  font-family: 'Montserrat',serif;
+  font-weight : 500;
+  color: white;
+}
+.menu a{
+  padding:15px;
+  text-align:center;
+}
+.menu a:hover{
+  color:white;
+}
+@media screen and (max-width:700px){
+  header{
+    height:auto;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .logo{
+    width:100vw;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px;
+  }
+  .menubar{
+    width:18px;
+    height:3px;
+    background:white;
+    margin-right:20px;
+    position: relative;
+    top:12px;
+    left:5px;
+  }
+  .menubar::before{
+    content:'';
+    width:18px;
+    height:3px;
+    background:white;
+    position: absolute;
+    top:-7px;
+    transition: all 0.1s ease-out;
+  }
+  .menubar::after{
+    content:'';
+    width:18px;
+    height:3px;
+    background:white;
+    position: absolute;
+    top:7px;
+  }
+   .mn-cont{
+    width:30px;
+    height:30px;
+    margin-right:20px;
+    border-radius:10%;
+  }
+  .mn-cont:hover{
+    background:red;
+  }
+
+  .menu a{
+    display: block;
+    width:100%;
+  }
+  .menu {
+    visibility: collapse;
+  }
+  .change {
+    visibility: visible;
+  }
+  .chng-mnbr{
+    width:0px;
+  }
+  .chng-mnbr::before{
+    transform: translateY(7px) rotate(-45deg);
+  }
+  .chng-mnbr::after{
+    transform: translateY(-7px) rotate(45deg);
+
+  }
+}

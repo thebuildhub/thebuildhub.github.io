@@ -1,0 +1,22 @@
+body {
+  background: #308577;
+}
+
+header {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+header .navbar {
+  color: blue;
+  font-size: 2rem;
+}
+
+header p {
+  color: #463b3b;
+}
+
+header .para2 {
+  font-size: 3rem;
+}
+/*# sourceMappingURL=style.css.map */

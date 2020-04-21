@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ajax using json file</title>
+</head>
+<body>
+<button id="button1">Get user</button>
+<button id="button2">Get users</button>
+
+<h2>Get user</h2>
+<div id="user"></div>
+
+<h2>Get users</h2>
+<div id="users"></div>
+
+<script>
+  document.querySelector('#button1').addEventListener('click',loadUser);
+
+  function loadUser(){
+    let xhr = new XMLHttpRequest();
+
+    xhr.open('GET','user.json',true);
+
+    xhr.onload = function(){
+      if(this.status == 200){
+        var user = JSON.parse(this.responseText);
+        var output = '';
+        output += `<b>Name</b> : ${user.name} <br><b>Id</b>: ${user.id}<br><b>Email</b>: ${user.email}<br>`
+        document.querySelector('#user').innerHTML = output;
+      }
+    }
+    xhr.send();
+  }
+
+
+    document.querySelector('#button2').addEventListener('click',loadUsers);
+
+    function loadUsers(){
+      let xhr = new XMLHttpRequest();
+
+      xhr.open('GET','users.json',true);
+
+      xhr.onload = function(){
+        if(xhr.status == 200){
+          let users = JSON.parse(this.responseText);
+          let output ='';
+
+          for(let i in users){
+            output += `<b>Name</b> : ${users[i].name} <br><b>Id</b>: ${users[i].id}<br><b>Email</b>: ${users[i].email}<br><br>`;
+          }
+          document.querySelector('#users').innerHTML = output;
+        }
+      }
+      xhr.send();
+    }
+</script>
+
+
+</body>
+</html>

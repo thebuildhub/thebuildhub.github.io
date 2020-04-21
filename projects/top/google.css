@@ -1,0 +1,288 @@
+/* imports */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+
+
+
+
+
+
+/* general settings */
+*{
+  list-style-type:none;
+  text-decoration:none;
+  color:var(--color-font);
+  background:var(--color-bg);
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+  font-family: 'Roboto', sans-serif;
+}
+:root{
+  --color-border:#dfdfdf;
+  --color-border-2:#bfbfbf;
+  --color-font : #252525;
+  --color-hover :#5d5d5d;
+  --color-link :#3c31b7;
+  --color-bg:#fff;
+  --color-foot:#f2f2f2;
+  --color-mail:#0288d1;
+  --color-G:#4285f4;
+  --color-o-1:#ea4335;
+  --color-o-2:#fbbc05;
+  --color-g:#4285f4;
+  --color-l:#34a853;
+  --color-e:#ea4335;
+
+}
+/* header */
+
+header{
+ width:100vw;
+ height:8vh;
+ font-size:0.9rem;
+}
+.head{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  text-align:center;
+  margin-right:30px;
+}
+.head li{
+  margin:10px;
+}
+.head li a:hover{
+  text-decoration: underline;
+  color:var(--color-hover);
+}
+.head .mail {
+  background: var(--color-mail);
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+}
+/* content */
+
+section{
+  width:100vw;
+  height:80vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  align-items: center;
+}
+
+.logo{
+  font-size:6rem;
+  display:flex;
+  margin:5px;
+  margin-top:110px;
+}
+
+#G{
+  color:var(--color-G);
+}#o-1{
+  color:var(--color-o-1);
+}
+#o-2{
+  color:var(--color-o-2);
+}#g{
+  color:var(--color-g);
+}#l{
+  color:var(--color-l);
+}#e{
+  color:var(--color-e);
+}
+
+.search-bar{
+  width:80vw;
+  max-width:480px;
+  height:48px;
+  border:1px solid var(--color-border);
+  border-radius:24px;
+  position:relative;
+  margin:5px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.aba{
+  font-size:20px;
+  color:var(--color-hover);
+  padding-right:15px;
+}
+.search-bar:hover {
+  box-shadow: 1px 1px 15px var(--color-border);
+}
+.inpt{
+  width:90%;
+  height:100%;
+  border:none;
+  padding:0;
+  margin:0;
+  border-top-right-radius:24px;
+  border-bottom-right-radius:24px;
+  font-size:20px;
+}
+.b{
+  display:flex;
+  text-align:center;
+  justify-content:center;
+  align-items:center;
+}
+.bars{
+  width:auto;
+  height:35px;
+  border:1px solid var(--color-foot);
+  background:var(--color-foot);
+  color: var(--color-hover);
+  border-radius: 5px;
+  margin:5px;
+  padding: 0 15px;
+  padding-top:6px;
+}
+.bars:hover{
+  border-color:var(--color-border-2);
+  color:var(--color-font);
+}
+.link{
+  color:var(--color-link);
+
+}
+.c{
+  margin-bottom:149px;
+  font-size:0.9rem;
+}
+.c p a{
+  text-decoration:underline;
+}
+
+/* footer */
+footer{
+  width:100vw;
+  height:12vh;
+  font-size:1rem;
+}
+.col{
+  border-top:1px solid var(--color-border);
+  height:50%;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  background:var(--color-foot);
+}
+.c1 p{
+  margin:0 20px;
+  background:inherit;
+  color: var(--color-hover);
+}
+.c2 {
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  align-items:center;
+  background:var(--color-foot);
+}
+.foot{
+  background:inherit;
+  display:flex;
+}
+/* #f-1{
+  order:2;
+}
+#f-2{
+  order:4;
+}
+#f-3{
+  order:1;
+}
+#f-4{
+  order:3;
+} */
+
+
+.foot a{
+  margin:0 20px;
+  background:inherit;
+  color: var(--color-hover);
+}
+
+/* svg styling */
+svg{
+  width:30px;
+  height:30px;
+}
+.search{
+  margin-left:10px;
+  width:20px;
+  height:20px;
+}
+circle{
+  fill:none;
+}
+.button rect{
+  fill:grey;
+}
+.button:hover rect{
+fill :black;
+}
+
+/* media queries */
+
+/* for tablets */
+
+@media screen and (max-width : 800px){
+  /* header{
+    display:none;
+  } */
+  section{
+    height: 88vh;
+  }
+}
+@media screen and (max-width:850px){
+  .f-right{
+    display:none;
+  }
+}
+@media screen and (max-width: 640px){
+  .b{
+    display:none;
+  }
+  .c2{
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
+    height:200px;
+  }
+  .foot a{
+    margin-bottom:5px;
+  }
+  .f-left{
+    order:2;
+    display:flex;
+    flex-direction:column;
+  }
+  .f-right{
+    display:flex;
+    flex-direction:column;
+    order:1;
+  }
+
+
+}
+
+
+
+
+
+
+
+
+/* the happy end */

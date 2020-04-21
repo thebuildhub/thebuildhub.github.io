@@ -1,0 +1,104 @@
+/* imports */
+/* general styling */
+*{
+  margin:0;
+  padding:0;
+  list-style-type:none;
+  text-decoration:none;
+  box-sizing:border-box;
+}
+/* side navigation */
+.nav{
+  height:100vh;
+  width: 47vw;
+  max-width:250px;
+  background:#001f2e;
+  position:fixed;
+  top:0;
+  left:0px;
+}
+.logo{
+  text-align:center;
+  padding:10px;
+  font-size:30px;
+  color : white;
+  background:#002b42;
+  height:100px;
+  margin-bottom:auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.sidenav{
+  text-align:left;
+  padding-top:35px;
+  width:100%;
+}
+.sidenav li{
+  font-size:20px;
+  /* padding:20px;
+  padding: 20px 35px; */
+  padding-left:15px;
+  padding-right:15px;
+}
+.sidenav li a{
+  display:block;
+  color : #8599a1;
+  padding: 20px 15px;
+  border-bottom:2px solid #8599a1;
+}
+.sidenav li:hover{
+  padding-left:25px;
+  font-weight: bolder;
+  color : #ffffff;
+  border-color:white;
+}
+
+
+
+.menubr{
+  width:50px;
+  height:50px;
+  background:#001f34;
+  padding-top:10px;
+  padding-left:5px;
+  margin-left:auto;
+}
+.chkbox{
+  display:hidden;
+}
+
+.tab{
+  width:30px;
+  height:5px;
+  background:white;
+  margin-right:20px;
+  position: relative;
+  border-radius:10%;
+  top:12px;
+  left:5px;
+
+}
+.tab::before{
+  content:'';
+  width:30px;
+  height:5px;
+  background:white;
+  position: absolute;
+  border-radius:10%;
+  top:-10px;
+  transition: all 0.1s ease-out;
+}
+.tab::after{
+  content:'';
+  width:30px;
+  height:5px;
+  background:white;
+  position: absolute;
+  top:10px;
+  border-radius:10%;
+}
+#check:checked ~ .logo{
+  background: red;
+  color:black;
+}

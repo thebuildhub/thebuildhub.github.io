@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox one</title>
+    <style>
+        .checkbox{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:1.2rem;
+            width:300px;
+            cursor:pointer;
+            
+        }
+        .checkbox input{
+            display:none;
+        }
+        .custom_checkbox{
+            width:1.2rem;
+            height:1.2rem;
+            border:2px solid #1b1b7c;
+            margin:5px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-shrink:0;
+            color:transparent;
+            transition:all 150ms;
+            border-radius:10%;
+
+        }
+        .custom_checkbox::after{
+            content:'\2714';
+            font-size:1rem;
+        }
+        .checkbox input:checked + .custom_checkbox{
+            background:#1b1b7c;
+            color:#ddd;
+        }
+        
+    </style>
+</head>
+<body>
+    <label for="chkbx" class = "checkbox">
+        <input type="checkbox" id = "chkbx">
+        <div class="custom_checkbox"></div>
+        Click here to proceed.
+    </label>
+</body>
+</html>

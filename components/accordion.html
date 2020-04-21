@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion</title>
+    <style>
+        .accordion{
+            border:1px solid #383838;
+            margin:10px;
+
+        }
+        .accordion_btn{
+            border:none;
+            width:100%;
+            padding:10px;
+            text-align:left;
+            font-size:1.2rem;
+            font-weight:bold;
+            background:#383838;
+            color:#eee;
+        }
+        .accordion_btn::after{
+            content:'\25be';
+            float:right;
+            transform:scale(1.5);
+        }
+        .accordion_content{
+            display:none;
+            padding:10px;
+        }
+        .accordion_btn-active{
+            background:#555;
+        }
+        .accordion_btn-active +
+        .accordion_content{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Accordion</h1>
+    <div class="accordion">
+        <button class="accordion_btn">Expand here</button>
+        <div class="accordion_content">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur est doloremque facilis unde eum magnam fuga, in voluptatem reiciendis rerum non eos autem hic adipisci.</p>
+        </div>
+    </div>
+    <div class="accordion">
+        <button class="accordion_btn">Expand here 2</button>
+        <div class="accordion_content">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur est doloremque facilis unde eum magnam fuga, in voluptatem reiciendis rerum non eos autem hic adipisci.</p>
+        </div>
+    </div>
+    <div class="accordion">
+        <button class="accordion_btn">Expand here 3</button>
+        <div class="accordion_content">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur est doloremque facilis unde eum magnam fuga, in voluptatem reiciendis rerum non eos autem hic adipisci.</p>
+        </div>
+    </div> <div class="accordion">
+        <button class="accordion_btn">Expand here 4</button>
+        <div class="accordion_content">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur est doloremque facilis unde eum magnam fuga, in voluptatem reiciendis rerum non eos autem hic adipisci.</p>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.accordion_btn').forEach(button => button.addEventListener('click', e=>{
+            button.classList.toggle('accordion_btn-active');
+        }))
+    </script>
+</body>
+</html>
