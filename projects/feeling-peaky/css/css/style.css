@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background: #f1f1f1;
+  color: black;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  border: 2px solid red;
+  width: 100vw;
+  height: 100vh;
+  background: #ff4629;
+  text-align: left;
+  color: #f1f1f1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  z-index: -1;
+}
+
+nav .nav_close {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  border: 2px solid red;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+nav .nav-list {
+  display: block;
+  width: 200px;
+  border: 2px solid red;
+  margin-left: 100px;
+}
+
+nav .nav-list li {
+  text-transform: uppercase;
+  list-style: none;
+  font-size: 25px;
+  line-height: 50px;
+  margin: 5px;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: inherit;
+  padding: 10px 40px;
+  font-weight: bolder;
+}
+
+header .logo {
+  border: 2px solid red;
+  text-transform: uppercase;
+  line-height: 25px;
+  font-size: 30px;
+}
+
+header .menu-open {
+  border: none;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  font-weight: bolder;
+}
+
+section {
+  background: inherit;
+  color: black;
+}
+
+.main {
+  -webkit-transition: -webkit-transform 250ms ease-out;
+  transition: -webkit-transform 250ms ease-out;
+  transition: transform 250ms ease-out;
+  transition: transform 250ms ease-out, -webkit-transform 250ms ease-out;
+}
+
+.main-small {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  -webkit-transform: scale(0.8) translateX(-400px);
+          transform: scale(0.8) translateX(-400px);
+  -webkit-transition: -webkit-transform 250ms ease-out;
+  transition: -webkit-transform 250ms ease-out;
+  transition: transform 250ms ease-out;
+  transition: transform 250ms ease-out, -webkit-transform 250ms ease-out;
+}
+/*# sourceMappingURL=style.css.map */
